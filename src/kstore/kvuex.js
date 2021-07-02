@@ -1,7 +1,6 @@
 // 1. 插件  挂载 $store
 // 2. 实现Store类
 
-import { defineProperties } from "core-js/core/object";
 
 let Vue
 
