@@ -19,10 +19,12 @@ class Store {
         })
         this._mutations = options.mutations
         this._actions = options.actions
+        this._wrappedGetters = options.getters
         this.commit = this.commit.bind(this)
         this.dispatch = this.dispatch.bind(this)
-        // TODO
-        this.getters = {}
+        // 定义computed选项
+        // const computed = {}
+        // this.getters = {}
         // defineProperties(this.getters, 'doubleCounter', { get() { })
     }
     // 隐晦处理
@@ -32,7 +34,7 @@ class Store {
     set state(v) {
         console.error('please use replaceState to reset state');
     }
-
+    
     commit(type, payload) {
         const entry = this._mutations[type]
         if (!entry) {
